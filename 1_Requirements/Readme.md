@@ -1,13 +1,17 @@
 # Requirements
-## Introduction
- --- TBD 
+**Introduction**
 
-## Research
-![Description](Link to Pic)
--- Content 
-## Cost and Features
-![Description](Link to Pic)
--- Content 
+Since the inception of the educated class, we needed to assess the people based on their technical ability to bring the best in their respective fields but as the number of people needed to assess grew more it became tough analyse them all, this is when automated tools came up to give us the idea of results, crunching time needed to minutes, which used to take months to compute the data.
+
+**Research**
+
+After, the Industrial Revolution there was a need to educate, train people in the field of engineering to meet the demands of products but there was no way to judge people from their abilities, this is when the art of assessing people came up. Today almost every online exam that are being conducted by any recruiting institutions or companies use online tools to assess the people.
+
+**Cost and Features**
+
+Our software can calculate the performance of a student by comparing his marks with the class average in each learning objective, co-relate the marks of the student between pre-survey and post-survey, calculate the class maxima in each learning objective and class minima , and graphically displays the data.
+
+In the market the cost for this feature may from few thousands to lakhs depending on the type of feature being used, and number of students being used to assess.
 ## Defining Our System
     -- TBD
 **Needs:**
