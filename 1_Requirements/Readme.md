@@ -13,8 +13,6 @@ Our software can calculate the performance of a student by comparing his marks w
 
 In the market the cost for this feature may from few thousands to lakhs depending on the type of feature being used, and number of students being used to assess.
 ## Defining Our System
-    -- TBD
-**Needs:**
 
 - It is a tool that analyse performance of a student in a particular module and also in subject.
 - It is need of an hour to make a student realise where he stands in overall class and at what part of subject he should focus.
