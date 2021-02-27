@@ -36,11 +36,20 @@
 **TBD**
 
 # Detail requirements
-## High Level Requirements:
---- TBD in Tabular Format 
--- ID | Description | Status (Implemented/Future)
 
+## HIGH KEVEL REQUIREMENTS
+| Requirement ID | Requirement Description |
+| --- | --- |
+| 1.Class average | To know the average of entire class in particular learning outcome. |
+| 2.Student average | To know the average of each student in particular learning outcome. |
+| 3. Class maxima | To know the maximum score of the class. |
+| 4. Class minima | To know the minimum score of the class. |
+| 5.Student maxima | To know the maximum score of the student. |
+| 6.Student minima | To know the minimum score of the student. |
 
-##  Low level Requirements:
---- TBD in Tabular Format 
--- ID | Description | Status (Implemented/Future)
+## LOW LEVEL REQUIREMENTS
+
+| Requirement ID | Requirement Description |
+| --- | --- |
+| 1.Top five data | To know the top 5 students of the class. |
+| 2.Bottom five data | To know the bottom five data of the class. |
