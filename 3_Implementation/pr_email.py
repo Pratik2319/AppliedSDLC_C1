@@ -12,7 +12,7 @@ msg['From']
 msg['To']
 msg.set_content()
 
-with open('random.jpg', 'r') as f:
+with open('random.jpg', 'rb') as f:
     file_data = f.read()
     file_type = imghdr.what(f.name)
     file_name = f.name
