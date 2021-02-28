@@ -130,7 +130,8 @@ def calc_plot_all(d1):
     """returns all the plot"""
     for d in d1.items():
         x = "pre_results"
-        auto_co_plotting(average_of_los(), d[0], x)             #PRE-TEST
-        cross_co_plotting(average_of_los(),)                                   #CROSS B/W PRE AND POST
-        cross_co_plotting()            #CROSS B/W Personal and class average
-                               
+        auto_co_plotting(average_of_los(), d[0], x)                     #PRE-TEST
+        cross_co_plotting(average_of_los(), average_of_los(), d[0], x)  #CROSS B/W PRE AND POST
+        cross_co_plotting(average_of_los(), max_of_LO(), d[0], x)       #CROSS B/W Personal and class average                      
+        
+        
