@@ -1,3 +1,4 @@
+"""This fie is for sending automated emails"""
 import os
 import smtplib
 import imghdr
