@@ -1,5 +1,6 @@
 import pandas as pd
-import matplotlib
+import numpy as np
+from matplotlib import pyplot as plt
 data=pd.read_excel("presur.xlsx",header=1)
 print(data)
 #sum=data['LO1'].sum()
@@ -31,3 +32,23 @@ def total_marks_of_student():
         return av   
 
 total_marks_of_student()
+
+
+"""Do not touch this yet"""
+"""Plotting the data using bar graph"""
+
+x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
+
+def auto_co_plotting(y_lst, x_lst):
+    plt.bar(x_lst, y_lst, color="#000000", label="Student's Performance")
+
+def cross_co_plotting(y_lst2, y_lst1, x_lst):
+    x_ind = np.arange(len(x_lst))
+    width = 0.3
+    plt.bar(x_ind, y_lst2, color="#000000", label="Pre-test", width=0.3)
+    plt.bar(x_ind + width, y_lst1, color="#ff00ff", label="Post-test", width=0.3)
+
+
+
+
+
