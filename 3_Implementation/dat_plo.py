@@ -5,35 +5,75 @@ from matplotlib import pyplot as plt
 
 data=pd.read_excel("presur.xlsx",header=1)
 print(data)
-#sum=data['LO1'].sum()
-#no_of_rows=data.shape[0]
-#average=sum/no_of_rows
-#print(average)
+
+def average_of_los():
+    """average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list """
+    mylist=[]
+    for i in range(1,7):
+        mystring="LO"+str(i)
+        sum=data[mystring].mean()
+        mylist.append(sum)
+    return mylist
+
+
 def min_of_LO():
-    """ returns minimum of a given LO across all the students"""
+    """minimum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list"""
+    mylist=[]
     for i in range(1,7):
         a="LO"+str(i)
         min_lo=data[a].min()
-        return min_lo
+        mylist.append(min_lo)
+    return mylist
 
-min_of_LO()
 
 def max_of_LO():
-    """returns maximum of a given LO across all the students"""
+    """maximum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list """
+    mylist=[]
     for i in range(1,7):
         a="LO"+str(i)
         max_lo=data[a].max()
-        return max_lo
+        mylist.append(max_lo)
+    return mylist
 
-max_of_LO()
 
 def total_marks_of_student():
-    """returns total marks of a student across all LO'S"""
-    for i in range(0,4):
+    """Total marks of all students in a list"""
+    mylist=[]
+    for i in range(0,data.shape[0]):
         av=data.iloc[i,2:].sum()
-        return av   
+        mylist.append(av) 
+    return mylist
 
-total_marks_of_student()
+
+def bottom_5_average():
+    """average of bottom 5 students of a all los in a list """
+    mylist=[]
+    for i in range(1,7):
+        string="LO"+str(i)
+        sort_data=data.sort_values(string)
+        mea=data.iloc[0:5,i+1].mean()
+        mylist.append(mea)
+    return mylist
+
+
+def top_5_average():
+    """average of top 5 students of a all los in a list """
+    mylist=[]
+    for i in range(1,7):
+        string="LO"+str(i)
+        sort_data=data.sort_values(string,ascending=False)
+        mea=data.iloc[0:5,i+1].mean()
+        mylist.append(mea)
+    return mylist
+
+
+def sum_of_marks():
+    """ Total marks in all los of students in a list"""
+    mylist=[]
+    for i in range(0,data.shape[0]):
+            s=data.iloc[i,2:].sum()
+            mylist.append(s)
+    return mylist
 
 #-----------------------------------------------------------------------------------------------------------
 
