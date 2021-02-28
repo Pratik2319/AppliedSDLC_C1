@@ -12,8 +12,18 @@ data4=pd.read_excel("data_test/posttest.xlsx")
 
 data = [data1, data2, data3, data4]
 
-def marks_los(data, psno):
-    pass
+
+def list_of_los(data,ps):
+    """Perticular ps number los in a list"""
+    mylist=[]
+    for i in range(0,data.shape[0]):
+        if data.iloc[i,0]==ps:
+            for j in range(2,8):
+               mylist.append(data.iloc[i,j])
+            print(mylist)
+        else:
+            continue
+#list_of_los(data1,99003650)   
 
 def average_of_los(data):
     '''average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list''' 
@@ -129,22 +139,21 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
 
 def calc_plot_all_std(d1):
     """plots all the plot for a all students one at a time"""
-    rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
     for d in d1.items():
-        j = 0
-        for i in data:                                                                           #PRE-TEST AND POST ASSESSMENT
-            auto_co_plotting(marks_los(i, d[0]), d[0], rd_lst[j])
-            j += 1
+        for i in data:                                                            #PRE-TEST AND POST ASSESSMENT
+            auto_co_plotting(average_of_los(i), d[0], x)
 
-        cross_co_plotting(marks_los(data1, d[0]), marks_los(data2, d[0]), d[0], "pre_post_sur")  #CROSS B/W PRE AND POST SURVEY
-        cross_co_plotting(marks_los(data3, d[0]), marks_los(data4, d[0]), d[0], "pre_post_tst")  #CROSS B/W PRE AND POST ASSESSMENT
+        cross_co_plotting(average_of_los(data1), average_of_los(data2), d[0], x)  #CROSS B/W PRE AND POST SURVEY
+        cross_co_plotting(average_of_los(data3), average_of_los(data4), d[0], x)  #CROSS B/W PRE AND POST ASSESSMENT
+        cross_co_plotting(average_of_los(data1), max_of_LO(data2), d[0], x)       #CROSS B/W Personal and class average                      
+        auto_co_plotting(average_of_los(data1), min_of_LO(data1), d[0], x)                                   #CROSS B/W Personal and class Maxima
 
 
 def calc_plot_all_fac():
     """plots all the plots required for the faculty"""
     s = "faculty"
     for i in data:
-        cross_co_plotting(average_of_los(i), max_of_LO(i),s, "avg_max")                        #CROSS B/W AVERAGE AND CLASS MAXIMA
-        cross_co_plotting(average_of_los(i), min_of_LO(i),s, "avg_min")                        #CROSS B/W AVERAGE AND CLASS MINIMA
-        cross_co_plotting(top_5_average(i), bottom_5_average(i),s, "tpmax_min")                #CROSS B/W TOP_5 AND BOTTOM_5
+        cross_co_plotting(average_of_los(i), max_of_LO(i),s, s)
+        cross_co_plotting(average_of_los(i), min_of_LO(i),s, s)
+        cross_co_plotting(average_of_los(i), bottom_5_average(i),s, s)
 
