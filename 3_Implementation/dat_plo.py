@@ -165,7 +165,15 @@ def sum_of_marks(data):
 
 
 # sum_of_marks()
+def psno_email_list(data):
+    """Ps number corresponding email in a dictionary"""
+    dic={}
+    for i in range(0,data.shape[0]):
+        dic[data.iloc[i,0]]=data.iloc[i,1]
+    
+    return dic
 
+psno_email_list(data1)
 
 #-----------------------------------------------------------------------------------------------------------
 
