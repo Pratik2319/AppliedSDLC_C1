@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 import openpyxl
 
 #Reading all the files
+
 data1=pd.read_excel("data_test/presurvey.xlsx")
 data2=pd.read_excel("data_test/postsurvey.xlsx") 
 data3=pd.read_excel("data_test/pretest.xlsx")
@@ -106,11 +107,10 @@ def psno_email_list(data=data1):
     
     return dic
 
-print(dic)
 
 """Plotting the data using bar graph"""
-x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
+x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
 def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
@@ -138,22 +138,26 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
 
 
 def calc_plot_all_std(d1):
-    """plots all the plot for a all students one at a time"""
+    """plots all the plot for all students one at a time"""
+    rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
     for d in d1.items():
-        for i in data:                                                            #PRE-TEST AND POST ASSESSMENT
-            auto_co_plotting(average_of_los(i), d[0], x)
+        for i in data:                                                                              #PRE-TEST AND POST ASSESSMENT
+            auto_co_plotting(list_of_los(i, d[0]), d[0], rd_lst[j])
+            j += 1
 
-        cross_co_plotting(average_of_los(data1), average_of_los(data2), d[0], x)  #CROSS B/W PRE AND POST SURVEY
-        cross_co_plotting(average_of_los(data3), average_of_los(data4), d[0], x)  #CROSS B/W PRE AND POST ASSESSMENT
-        cross_co_plotting(average_of_los(data1), max_of_LO(data2), d[0], x)       #CROSS B/W Personal and class average                      
-        auto_co_plotting(average_of_los(data1), min_of_LO(data1), d[0], x)                                   #CROSS B/W Personal and class Maxima
+        cross_co_plotting(list_of_los(data1, d[0]), list_of_los(data2, d[0]), d[0], "pre_pst_sur")  #CROSS B/W PRE AND POST SURVEY
+        cross_co_plotting(list_of_los(data3, d[0]), list_of_los(data4, d[0]), d[0], "pre_pst_sur")  #CROSS B/W PRE AND POST ASSESSMENT
 
 
 def calc_plot_all_fac():
     """plots all the plots required for the faculty"""
     s = "faculty"
     for i in data:
-        cross_co_plotting(average_of_los(i), max_of_LO(i),s, s)
-        cross_co_plotting(average_of_los(i), min_of_LO(i),s, s)
-        cross_co_plotting(average_of_los(i), bottom_5_average(i),s, s)
+        cross_co_plotting(average_of_los(i), max_of_LO(i),s, "avg_max")
+        cross_co_plotting(max_of_LO(i), min_of_LO(i),s, "max_min")
+        cross_co_plotting(top_5_average(i), bottom_5_average(i),s, "tp_btm5")
+
+
+
+
 
