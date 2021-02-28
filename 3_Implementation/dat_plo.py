@@ -122,6 +122,50 @@ def max_of_LO(data):
         max_lo=data[a].max()
         mylist.append(max_lo)
     return mylist
+# total_marks_of_student()
+
+
+def bottom_5_average(data):
+    """average of bottom 5 students of a all los in a list """
+    mylist=[]
+    for i in range(1,7):
+        string="LO"+str(i)
+        sorted_data=data.sort_values(string,axis=0)
+        mea=sorted_data.iloc[0:5,i+1].mean()
+        mylist.append(mea)
+    return mylist
+
+
+# bottom_5_average()
+
+
+def top_5_average(data):
+    """average of top 5 students of a all los in a list """
+    mylist=[]
+    for i in range(1,7):
+        string="LO"+str(i)
+        sorted_data=data.sort_values(string,ascending=False)
+        mea=sorted_data.iloc[0:5,i+1].mean()
+        mylist.append(mea)
+    return mylist
+
+
+# top_5_average()
+
+
+def sum_of_marks(data):
+
+    """ Total marks in all los of students in a list"""
+
+    mylist=[]
+    for i in range(0,data.shape[0]):
+            s=data.iloc[i,2:].sum()
+            mylist.append(s)
+    return mylist
+
+
+# sum_of_marks()
+
 
 #-----------------------------------------------------------------------------------------------------------
 
