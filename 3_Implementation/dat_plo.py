@@ -3,17 +3,20 @@ import numpy as np
 import os
 from matplotlib import pyplot as plt
 
-data=pd.read_excel("presur.xlsx",header=1)
-print(data)
+#-----------------------------------------------------------------------------------------------------------
+import pandas as pd
+import matplotlib
 
-# making a class
+data1=pd.read_excel("postsurvey.xlsx") 
+data2=pd.read_excel("presurvey.xlsx")
+data3=pd.read_excel("pretest.xlsx")
+data4=pd.read_excel("posttest.xlsx")
 
-class calculation:
-    def __init__(self):
-        pass
+'''importing the presurvey file'''
 
-def average_of_los():
-    """average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list """
+
+def average_of_los(data):
+    '''average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list''' 
     mylist=[]
     for i in range(1,7):
         mystring="LO"+str(i)
@@ -21,8 +24,9 @@ def average_of_los():
         mylist.append(sum)
     return mylist
 
+#average_of_los()
 
-def min_of_LO():
+def min_of_LO(data):
     """minimum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list"""
     mylist=[]
     for i in range(1,7):
@@ -31,8 +35,9 @@ def min_of_LO():
         mylist.append(min_lo)
     return mylist
 
+# min_of_LO()
 
-def max_of_LO():
+def max_of_LO(data):
     """maximum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list """
     mylist=[]
     for i in range(1,7):
@@ -40,46 +45,58 @@ def max_of_LO():
         max_lo=data[a].max()
         mylist.append(max_lo)
     return mylist
+# total_marks_of_student()
 
 
-def total_marks_of_student():
-    """Total marks of all students in a list"""
-    mylist=[]
-    for i in range(0,data.shape[0]):
-        av=data.iloc[i,2:].sum()
-        mylist.append(av) 
-    return mylist
-
-
-def bottom_5_average():
+def bottom_5_average(data):
     """average of bottom 5 students of a all los in a list """
     mylist=[]
     for i in range(1,7):
         string="LO"+str(i)
-        sort_data=data.sort_values(string)
-        mea=data.iloc[0:5,i+1].mean()
+        sorted_data=data.sort_values(string,axis=0)
+        mea=sorted_data.iloc[0:5,i+1].mean()
         mylist.append(mea)
     return mylist
 
 
-def top_5_average():
+# bottom_5_average()
+
+
+def top_5_average(data):
     """average of top 5 students of a all los in a list """
     mylist=[]
     for i in range(1,7):
         string="LO"+str(i)
-        sort_data=data.sort_values(string,ascending=False)
-        mea=data.iloc[0:5,i+1].mean()
+        sorted_data=data.sort_values(string,ascending=False)
+        mea=sorted_data.iloc[0:5,i+1].mean()
         mylist.append(mea)
     return mylist
 
 
-def sum_of_marks():
+# top_5_average()
+
+
+def sum_of_marks(data):
+
     """ Total marks in all los of students in a list"""
+
     mylist=[]
     for i in range(0,data.shape[0]):
             s=data.iloc[i,2:].sum()
             mylist.append(s)
     return mylist
+
+
+# sum_of_marks()
+def psno_email_list(data):
+    """Ps number corresponding email in a dictionary"""
+    dic={}
+    for i in range(0,data.shape[0]):
+        dic[data.iloc[i,0]]=data.iloc[i,1]
+    
+    return dic
+
+psno_email_list(data1)
 
 #-----------------------------------------------------------------------------------------------------------
 
