@@ -10,9 +10,9 @@ def send_email():
 
     msg = EmailMessage()
     msg['Subject'] = "TEST/SURVEY RESULTS"
-    msg['From'] = ""
-    msg['To']
-    msg.set_content()
+    msg['From'] = ADDRESS
+    msg['To'] = "example@gmail.com"                    #To be filled
+    msg.set_content('Please find your Results')
 
     with open('random.jpg', 'rb') as f:
         file_data = f.read()
