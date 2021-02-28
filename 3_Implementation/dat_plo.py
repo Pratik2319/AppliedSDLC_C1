@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 from matplotlib import pyplot as plt
+
 data=pd.read_excel("presur.xlsx",header=1)
 print(data)
 #sum=data['LO1'].sum()
@@ -55,6 +56,9 @@ def auto_co_plotting(y_lst, x_lst, y, a):
         os.mkdir(path)
     plt.savefig(f"{y}/{a}.png")
 
+    """Will use later"""
+    return f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+
 
 def cross_co_plotting(y_lst2, y_lst1, x_lst, y, a):
     """to co-relate the data"""
@@ -71,5 +75,10 @@ def cross_co_plotting(y_lst2, y_lst1, x_lst, y, a):
         path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
         os.mkdir(path)
     plt.savefig(f"{y}/{a}.png")
+    
+    """Will use later"""
+    return f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+
+
 
 

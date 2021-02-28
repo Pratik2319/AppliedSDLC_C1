@@ -1,7 +1,14 @@
 """This is the main file for implementation"""
+from dat_plo import *
+from pr_email import *
 
 def main():
-    pass
+    print("Calculating Data")
+    auto_co_plotting([], [], "", "a")
+    cross_co_plotting([], [], [],  "", "a")
+    send_email()
+
+
 
 
 if __name__ == "__main__":
