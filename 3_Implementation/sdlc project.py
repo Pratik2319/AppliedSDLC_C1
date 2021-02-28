@@ -41,31 +41,35 @@ total_marks_of_student()
 
 x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
+
 def auto_co_plotting(y_lst, x_lst, y, a):
     """saves the plot in a given directory"""
+    for i in y_lst:
+        if type(i) != int:
+            pass               #Todo for dummy/missing data
     plt.bar(x_lst, y_lst, color="#000000", label="Student's Performance")
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
-    if not os.path.exists(f"C:/Users/mithu/Desktop/demo/{y}"):
-        path = f"C:/Users/mithu/Desktop/demo/{y}"
+    if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
+        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
         os.mkdir(path)
     plt.savefig(f"{y}/{a}.png")
 
 
 def cross_co_plotting(y_lst2, y_lst1, x_lst, y, a):
     """to co-relate the data"""
+    for i in y_lst1:
+        if type(i) != int:
+            pass               #Todo for dummy/ missing data
     x_ind = np.arange(len(x_lst))
     width = 0.3
     plt.bar(x_ind, y_lst2, color="#000000", label="Pre-test", width=0.3)
     plt.bar(x_ind + width, y_lst1, color="#ff00ff", label="Post-test", width=0.3)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
-    if not os.path.exists(f"C:/Users/mithu/Desktop/demo/{y}"):
-        path = f"C:/Users/mithu/Desktop/demo/{y}"
+    if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
+        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
         os.mkdir(path)
     plt.savefig(f"{y}/{a}.png")
-
-
-
 
 
