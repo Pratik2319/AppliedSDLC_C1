@@ -4,23 +4,34 @@ import smtplib
 import imghdr
 from email.message import EmailMessage
 
-def send_email():
-    ADDRESS = os.environ.get('EMAIL_USER')
-    PASSWORD = os.environ.get('EMAIL_PASS')
 
-    msg = EmailMessage()
-    msg['Subject'] = "TEST/SURVEY RESULTS"
-    msg['From'] = ADDRESS
-    msg['To'] = "example@gmail.com"                    #To be filled
-    msg.set_content('Please find your Results')
+def send_email(d1):
+    """To send the email"""
+    ADDRESS = "fortestinginpython@gmail.com"
+    PASSWORD = ""    #encrypted
+    
+    for value in d1.items():
+        msg = EmailMessage()
+        msg['Subject'] = f"TEST/SURVEY RESULTS for {value[0]}"
+        msg['From'] = ADDRESS
+        msg['To'] = value[1]                                          #to email         
+        msg.set_content('Please find your Results')
 
-    with open('random.jpg', 'rb') as f:
-        file_data = f.read()
-        file_type = imghdr.what(f.name)
-        file_name = f.name
-        
-    msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
+        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{d1[0]}"
 
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(ADDRESS, PASSWORD)
-        smtp.send_message(msg)
+        for i in os.walk(path):      
+            plots = i[2]                                                     
+
+        for plot in plots:
+            with open(plot, 'rb') as f:
+                file_data = f.read()
+                file_type = imghdr.what(f.name)
+                file_name = f.name
+                
+            msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+            smtp.login(ADDRESS, PASSWORD)
+            smtp.send_message(msg)
+
+
