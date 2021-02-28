@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib
-data=pd.read_excel("presur.xlsx",header=1) """importing the presurvey file"""
+data=pd.read_excel("presur.xlsx",header=1)
 print(data)
 def average_of_los():
     """average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list """
@@ -78,11 +78,11 @@ def sum_of_marks():
 
     """ Total marks in all los of students in a list"""
 
-     mylist=[]
-     for i in range(0,data.shape[0]):
+    mylist=[]
+    for i in range(0,data.shape[0]):
             s=data.iloc[i,2:].sum()
             mylist.append(s)
-     return mylist
+    return mylist
 
 
 # sum_of_marks()
