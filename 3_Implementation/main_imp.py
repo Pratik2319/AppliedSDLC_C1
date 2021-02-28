@@ -4,7 +4,7 @@ from pr_email import *
 
 #To get the dictionary of ps-no as key and mail as value 
 
-ps_em = {}
+ps_em = psno_email_list()
 
 def main():
     print("Calculating Data")

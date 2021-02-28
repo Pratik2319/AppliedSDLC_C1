@@ -2,17 +2,13 @@ import pandas as pd
 import numpy as np
 import os
 from matplotlib import pyplot as plt
+import openpyxl
 
-#-----------------------------------------------------------------------------------------------------------
-import pandas as pd
-import matplotlib
-
-data1=pd.read_excel("postsurvey.xlsx") 
-data2=pd.read_excel("presurvey.xlsx")
+#Reading all the files
+data1=pd.read_excel("presurvey.xlsx")
+data2=pd.read_excel("postsurvey.xlsx") 
 data3=pd.read_excel("pretest.xlsx")
 data4=pd.read_excel("posttest.xlsx")
-
-'''importing the presurvey file'''
 
 
 def average_of_los(data):
@@ -88,7 +84,7 @@ def sum_of_marks(data):
 
 
 # sum_of_marks()
-def psno_email_list(data):
+def psno_email_list(data=data1):
     """Ps number corresponding email in a dictionary"""
     dic={}
     for i in range(0,data.shape[0]):
@@ -96,11 +92,7 @@ def psno_email_list(data):
     
     return dic
 
-psno_email_list(data1)
 
-#-----------------------------------------------------------------------------------------------------------
-
-"""Do not touch this yet"""
 """Plotting the data using bar graph"""
 
 x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
@@ -147,8 +139,7 @@ def calc_plot_all(d1):
     """returns all the plot"""
     for d in d1.items():
         x = "pre_results"
-        auto_co_plotting(average_of_los(), d[0], x)                     #PRE-TEST
-        cross_co_plotting(average_of_los(), average_of_los(), d[0], x)  #CROSS B/W PRE AND POST
-        cross_co_plotting(average_of_los(), max_of_LO(), d[0], x)       #CROSS B/W Personal and class average                      
-        
+        auto_co_plotting(average_of_los(data1), d[0], x)                     #PRE-TEST
+        cross_co_plotting(average_of_los(data1), average_of_los(data2), d[0], x)  #CROSS B/W PRE AND POST
+        cross_co_plotting(average_of_los(data1), max_of_LO(data2), d[0], x)       #CROSS B/W Personal and class average                      
         
