@@ -9,8 +9,8 @@ def send_email():
     PASSWORD = os.environ.get('EMAIL_PASS')
 
     msg = EmailMessage()
-    msg['Subject']
-    msg['From']
+    msg['Subject'] = "TEST/SURVEY RESULTS"
+    msg['From'] = ""
     msg['To']
     msg.set_content()
 
