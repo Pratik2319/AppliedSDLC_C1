@@ -6,6 +6,12 @@ from matplotlib import pyplot as plt
 data=pd.read_excel("presur.xlsx",header=1)
 print(data)
 
+# making a class
+
+class calculation:
+    def __init__(self):
+        pass
+
 def average_of_los():
     """average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list """
     mylist=[]
@@ -83,7 +89,7 @@ def sum_of_marks():
 x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
 
-def auto_co_plotting(y_lst, x_lst, y, a):
+def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
     for i in y_lst:
         if type(i) != int:
@@ -100,7 +106,7 @@ def auto_co_plotting(y_lst, x_lst, y, a):
     return f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
 
 
-def cross_co_plotting(y_lst2, y_lst1, x_lst, y, a):
+def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     """to co-relate the data"""
     for i in y_lst1:
         if type(i) != int:
@@ -120,5 +126,11 @@ def cross_co_plotting(y_lst2, y_lst1, x_lst, y, a):
     return f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
 
 
-
-
+def calc_plot_all(d1):
+    """returns all the plot"""
+    for d in d1.items():
+        x = "pre_results"
+        auto_co_plotting(average_of_los(), d[0], x)             #PRE-TEST
+        cross_co_plotting(average_of_los(),)                                   #CROSS B/W PRE AND POST
+        cross_co_plotting()            #CROSS B/W Personal and class average
+                               
