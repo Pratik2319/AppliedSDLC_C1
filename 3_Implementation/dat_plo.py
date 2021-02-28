@@ -4,13 +4,12 @@ import os
 from matplotlib import pyplot as plt
 import openpyxl
 
-#Reading all the files
 
+#Reading all the files
 data1=pd.read_excel("data_test/presurvey.xlsx")
 data2=pd.read_excel("data_test/postsurvey.xlsx") 
 data3=pd.read_excel("data_test/pretest.xlsx")
 data4=pd.read_excel("data_test/posttest.xlsx")
-
 data = [data1, data2, data3, data4]
 
 
@@ -23,8 +22,8 @@ def list_of_los(data,ps):
                mylist.append(data.iloc[i,j])
             print(mylist)
         else:
-            continue
-#list_of_los(data1,99003650)   
+            continue 
+
 
 def average_of_los(data):
     '''average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list''' 
@@ -35,7 +34,6 @@ def average_of_los(data):
         mylist.append(sum)
     return mylist
 
-#average_of_los()
 
 def min_of_LO(data):
     """minimum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list"""
@@ -46,7 +44,6 @@ def min_of_LO(data):
         mylist.append(min_lo)
     return mylist
 
-# min_of_LO()
 
 def max_of_LO(data):
     """maximum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list """
@@ -56,7 +53,6 @@ def max_of_LO(data):
         max_lo=data[a].max()
         mylist.append(max_lo)
     return mylist
-# total_marks_of_student()
 
 
 def bottom_5_average(data):
@@ -70,9 +66,6 @@ def bottom_5_average(data):
     return mylist
 
 
-# bottom_5_average()
-
-
 def top_5_average(data):
     """average of top 5 students of a all los in a list """
     mylist=[]
@@ -82,9 +75,6 @@ def top_5_average(data):
         mea=sorted_data.iloc[0:5,i+1].mean()
         mylist.append(mea)
     return mylist
-
-
-# top_5_average()
 
 
 def sum_of_marks(data):
@@ -98,7 +88,6 @@ def sum_of_marks(data):
     return mylist
 
 
-# sum_of_marks()
 def psno_email_list(data=data1):
     """Ps number corresponding email in a dictionary"""
     dic={}
@@ -109,8 +98,8 @@ def psno_email_list(data=data1):
 
 
 """Plotting the data using bar graph"""
-
 x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
+
 
 def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
@@ -137,6 +126,7 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     plt.savefig(f"{y}/{a}.png")
 
 
+
 def calc_plot_all_std(d1):
     """plots all the plot for all students one at a time"""
     rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
@@ -149,6 +139,7 @@ def calc_plot_all_std(d1):
         cross_co_plotting(list_of_los(data3, d[0]), list_of_los(data4, d[0]), d[0], "pre_pst_sur")  #CROSS B/W PRE AND POST ASSESSMENT
 
 
+
 def calc_plot_all_fac():
     """plots all the plots required for the faculty"""
     s = "faculty"
@@ -156,8 +147,3 @@ def calc_plot_all_fac():
         cross_co_plotting(average_of_los(i), max_of_LO(i),s, "avg_max")
         cross_co_plotting(max_of_LO(i), min_of_LO(i),s, "max_min")
         cross_co_plotting(top_5_average(i), bottom_5_average(i),s, "tp_btm5")
-
-
-
-
-
