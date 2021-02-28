@@ -80,6 +80,48 @@ def sum_of_marks():
             s=data.iloc[i,2:].sum()
             mylist.append(s)
     return mylist
+#-----------------------------------------------------------------------------------------------------------
+import pandas as pd
+import matplotlib
+
+data1=pd.read_excel("postsurvey.xlsx") 
+data2=pd.read_excel("presurvey.xlsx")
+data3=pd.read_excel("pretest.xlsx")
+data4=pd.read_excel("posttest.xlsx")
+
+'''importing the presurvey file'''
+
+
+def average_of_los(data):
+    '''average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list''' 
+    mylist=[]
+    for i in range(1,7):
+        mystring="LO"+str(i)
+        sum=data[mystring].mean()
+        mylist.append(sum)
+    return mylist
+
+#average_of_los()
+
+def min_of_LO(data):
+    """minimum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list"""
+    mylist=[]
+    for i in range(1,7):
+        a="LO"+str(i)
+        min_lo=data[a].min()
+        mylist.append(min_lo)
+    return mylist
+
+# min_of_LO()
+
+def max_of_LO(data):
+    """maximum of all lo1,lo2,lo3,lo4,lo5,lo6 in a list """
+    mylist=[]
+    for i in range(1,7):
+        a="LO"+str(i)
+        max_lo=data[a].max()
+        mylist.append(max_lo)
+    return mylist
 
 #-----------------------------------------------------------------------------------------------------------
 
