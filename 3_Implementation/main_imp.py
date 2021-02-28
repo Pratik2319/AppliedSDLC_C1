@@ -8,11 +8,13 @@ ps_em = psno_email_list()
 
 def main():
     print("Calculating Data")
+    calc_plot_all_std(ps_em)
+    calc_plot_all_fac()
+    send_email(ps_em)
+    print("Email sent to all the students")
+    print("Email sent to the Faculty")
     
 
 if __name__ == "__main__":
     main()
-    calc_plot_all(ps_em)
-    send_email(ps_em)
-    print("Email sent to all the students")
-    print("Email sent to the Faculty")
+    

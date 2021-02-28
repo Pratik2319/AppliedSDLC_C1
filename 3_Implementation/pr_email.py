@@ -5,10 +5,12 @@ import imghdr
 from email.message import EmailMessage
 
 
-def send_email(d1):
+def send_email(d2):
     """To send the email"""
     ADDRESS = "fortestinginpython@gmail.com"
     PASSWORD = ""    #encrypted
+    d1 = d2
+    d1['faculty'] = "" #faculty_email
     
     for value in d1.items():
         msg = EmailMessage()
