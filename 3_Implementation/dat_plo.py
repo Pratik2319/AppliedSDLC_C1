@@ -5,11 +5,12 @@ from matplotlib import pyplot as plt
 import openpyxl
 
 #Reading all the files
-data1=pd.read_excel("presurvey.xlsx")
-data2=pd.read_excel("postsurvey.xlsx") 
-data3=pd.read_excel("pretest.xlsx")
-data4=pd.read_excel("posttest.xlsx")
+data1=pd.read_excel("data_test/presurvey.xlsx")
+data2=pd.read_excel("data_test/postsurvey.xlsx") 
+data3=pd.read_excel("data_test/pretest.xlsx")
+data4=pd.read_excel("data_test/posttest.xlsx")
 
+data = [data1, data2, data3, data4]
 
 def average_of_los(data):
     '''average of all lo1,lo2,lo3,lo4,lo5,lo6 of all students in a list''' 
@@ -92,17 +93,14 @@ def psno_email_list(data=data1):
     
     return dic
 
+print(dic)
 
 """Plotting the data using bar graph"""
-
 x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
 
 def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
-    for i in y_lst:
-        if type(i) != int:
-            pass               #Todo for dummy/missing data
     plt.bar(x_lst, y_lst, color="#000000", label="Student's Performance")
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
@@ -111,15 +109,9 @@ def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
         os.mkdir(path)
     plt.savefig(f"{y}/{a}.png")
 
-    """Will use later"""
-    return f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
-
 
 def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     """to co-relate the data"""
-    for i in y_lst1:
-        if type(i) != int:
-            pass               #Todo for dummy/ missing data
     x_ind = np.arange(len(x_lst))
     width = 0.3
     plt.bar(x_ind, y_lst2, color="#000000", label="Pre-test", width=0.3)
@@ -130,16 +122,25 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
         path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
         os.mkdir(path)
     plt.savefig(f"{y}/{a}.png")
-    
-    """Will use later"""
-    return f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
 
 
-def calc_plot_all(d1):
-    """returns all the plot"""
+def calc_plot_all_std(d1):
+    """plots all the plot for a all students one at a time"""
     for d in d1.items():
-        x = "pre_results"
-        auto_co_plotting(average_of_los(data1), d[0], x)                     #PRE-TEST
-        cross_co_plotting(average_of_los(data1), average_of_los(data2), d[0], x)  #CROSS B/W PRE AND POST
+        for i in data:                                                            #PRE-TEST AND POST ASSESSMENT
+            auto_co_plotting(average_of_los(i), d[0], x)
+
+        cross_co_plotting(average_of_los(data1), average_of_los(data2), d[0], x)  #CROSS B/W PRE AND POST SURVEY
+        cross_co_plotting(average_of_los(data3), average_of_los(data4), d[0], x)  #CROSS B/W PRE AND POST ASSESSMENT
         cross_co_plotting(average_of_los(data1), max_of_LO(data2), d[0], x)       #CROSS B/W Personal and class average                      
-        
+        auto_co_plotting(average_of_los(data1), min_of_LO(data1), d[0], x)                                   #CROSS B/W Personal and class Maxima
+
+
+def calc_plot_all_fac():
+    """plots all the plots required for the faculty"""
+    s = "faculty"
+    for i in data:
+        cross_co_plotting(average_of_los(i), max_of_LO(i),s, s)
+        cross_co_plotting(average_of_los(i), min_of_LO(i),s, s)
+        cross_co_plotting(average_of_los(i), bottom_5_average(i),s, s)
+

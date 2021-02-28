@@ -14,7 +14,7 @@ def send_email(d1):
         msg = EmailMessage()
         msg['Subject'] = f"TEST/SURVEY RESULTS for {value[0]}"
         msg['From'] = ADDRESS
-        msg['To'] = value[1]                                          #to email         
+        msg['To'] = value[1]         
         msg.set_content('Please find your Results')
 
         path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{d1[0]}"
