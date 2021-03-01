@@ -116,7 +116,7 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     """to co-relate the data"""
     x_ind = np.arange(len(x_lst))
     width = 0.3
-    plt.bar(x_ind, y_lst2, color="#000000", label="Pre-test", width=0.3)
+    plt.bar(x_lst, y_lst2, color="#000000", label="Pre-test", width=0.3)
     plt.bar(x_ind + width, y_lst1, color="#ff00ff", label="Post-test", width=0.3)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
