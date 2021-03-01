@@ -5,6 +5,10 @@
 from sdlc_project import *
 import pytest
 
+def test_fun():
+    assert list_of_los() == 
+    pass
+    
 def test_fun1():
     assert average_of_los() == 
     pass
