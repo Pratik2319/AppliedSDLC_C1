@@ -112,10 +112,13 @@ def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     plt.bar(x_lst, y_lst, color="#000000", label="Student's Performance")
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
-    if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
-        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
-        os.mkdir(path)
-    plt.savefig(f"{y}/{a}.png")
+    try:
+        if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
+            path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+            os.mkdir(path)
+        plt.savefig(f"{y}/{a}.png")
+    except:
+        print("Give correct path")
 
 
 def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
@@ -126,10 +129,13 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     plt.bar(x_ind + width, y_lst1, color="#ff00ff", label="Post-test", width=0.3)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
-    if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
-        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
-        os.mkdir(path)
-    plt.savefig(f"{y}/{a}.png")
+    try:
+        if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
+            path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+            os.mkdir(path)
+        plt.savefig(f"{y}/{a}.png")
+    except:
+        print("Give correct path")
 
 
 
@@ -137,6 +143,7 @@ def calc_plot_all_std(d1):
     """plots all the plot for all students one at a time"""
     rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
     for d in d1.items():
+        j = 0
         for i in data_all:                                                                              #PRE-TEST AND POST ASSESSMENT
             auto_co_plotting(list_of_los(i, d[0]), d[0], rd_lst[j])
             j += 1
