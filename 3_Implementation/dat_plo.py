@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import openpyxl
 
 
-#Reading all the files
+#Reading all the excel files presurvey,postsurvey,pretest and posttest
 data1=pd.read_excel("data_test/presurvey.xlsx")
 data2=pd.read_excel("data_test/postsurvey.xlsx") 
 data3=pd.read_excel("data_test/pretest.xlsx")
