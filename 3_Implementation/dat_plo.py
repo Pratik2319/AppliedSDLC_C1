@@ -4,16 +4,10 @@ import os
 from matplotlib import pyplot as plt
 import openpyxl
 
-var1=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx'''""
-var2=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx'''""
-var3=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx'''""
-var4=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx'''""
-#Reading all the excel files presurvey,postsurvey,pretest and posttest
-data1= pd.read_excel(var1)
-print(data1)
-data2= pd.read_excel(var2)
-data3= pd.read_excel(var3)
-data4= pd.read_excel(var4)
+data1 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
+data2 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx''')
+data3 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx''')
+data4 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx''')
 
 
 data_all = [data1, data2, data3, data4]
@@ -23,7 +17,7 @@ def list_of_los(data,ps):
     """Perticular ps number los in a list"""
     mylist=[]
     for i in range(0,data.shape[0]):
-        if data.iloc[i,0]==ps:
+        if data.iloc[i,0]==int(ps):
             for j in range(2,8):
                mylist.append(data.iloc[i,j])
             return mylist
@@ -109,17 +103,20 @@ x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
 def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
-    plt.bar(x_lst, y_lst, color="#000000", label="Student's Performance")
+    plt.bar(x_lst, y_lst, color="#000000", label="SURVEY/ASSESSMENT")
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
+    plt.legend()
+    plt.title(a)
     try:
-        if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
-            path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+        if not os.path.exists(path):
             os.mkdir(path)
-        plt.savefig(f"{y}/{a}.png")
-    except:
-        print("Give correct path")
-
+        path_new = path + f"/{a}"
+        plt.savefig(path_new)
+    except Exception as e:
+        print(e)
+    
 
 def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     """to co-relate the data"""
@@ -129,14 +126,16 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     plt.bar(x_ind + width, y_lst1, color="#ff00ff", label="Post-test", width=0.3)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
+    plt.legend()
+    plt.title(a)
     try:
-        if not os.path.exists(f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"):
-            path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+        if not os.path.exists(path):
             os.mkdir(path)
-        plt.savefig(f"{y}/{a}.png")
-    except:
-        print("Give correct path")
-
+        path_new = path + f"/{a}"
+        plt.savefig(path_new)
+    except Exception as e:
+        print(e)
 
 
 def calc_plot_all_std(d1):
@@ -144,13 +143,12 @@ def calc_plot_all_std(d1):
     rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
     for d in d1.items():
         j = 0
-        for i in data_all:                                                                              #PRE-TEST AND POST ASSESSMENT
+        for i in data_all:                                                                          # PRE-TEST AND POST ASSESSMENT
             auto_co_plotting(list_of_los(i, d[0]), d[0], rd_lst[j])
             j += 1
 
-        cross_co_plotting(list_of_los(data1, d[0]), list_of_los(data2, d[0]), d[0], "pre_pst_sur")  #CROSS B/W PRE AND POST SURVEY
-        cross_co_plotting(list_of_los(data3, d[0]), list_of_los(data4, d[0]), d[0], "pre_pst_sur")  #CROSS B/W PRE AND POST ASSESSMENT
-
+        cross_co_plotting(list_of_los(data1, d[0]), list_of_los(data2, d[0]), d[0], "pre_pst_sur")  # CROSS B/W PRE AND POST SURVEY
+        cross_co_plotting(list_of_los(data3, d[0]), list_of_los(data4, d[0]), d[0], "pre_pst_tst")  # CROSS B/W PRE AND POST ASSESSMENT
 
 
 def calc_plot_all_fac():
