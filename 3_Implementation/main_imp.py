@@ -1,6 +1,6 @@
 """This is the main file for implementation"""
 from dat_plo import *
-from pr_email import *
+from pr_email import send_email
 
 
 # To get the dictionary of ps-no as key and mail as value

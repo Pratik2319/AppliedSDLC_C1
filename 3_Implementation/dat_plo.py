@@ -103,7 +103,7 @@ x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
 def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
-    plt.bar(x_lst, y_lst, color="#000000", label="SURVEY/ASSESSMENT")
+    plt.bar(x_lst, y_lst, color="#ff0000", label=a)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
     plt.legend()
@@ -122,8 +122,8 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     """to co-relate the data"""
     x_ind = np.arange(len(x_lst))
     width = 0.3
-    plt.bar(x_lst, y_lst2, color="#000000", label="Pre-test", width=0.3)
-    plt.bar(x_ind + width, y_lst1, color="#ff00ff", label="Post-test", width=0.3)
+    plt.bar(x_lst, y_lst2, color="#ff0000", label="Pre-test", width=0.3)
+    plt.bar(x_ind + width, y_lst1, color="#00ff00", label="Post-test", width=0.3)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
     plt.legend()
@@ -140,7 +140,7 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
 
 def calc_plot_all_std(d1):
     """plots all the plot for all students one at a time"""
-    rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
+    rd_lst = ["PRE_SURVEY", "POST_SURVEY", "PRE_TEST", "POST_TEST"]
     for d in d1.items():
         j = 0
         for i in data_all:                                                                          # PRE-TEST AND POST ASSESSMENT

@@ -28,7 +28,7 @@ def send_email(d2):
             with open(c, 'rb') as f:
                 file_data = f.read()
                 file_type = imghdr.what(f.name)
-                file_name = f.name
+                file_name = plot
 
             msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
 
