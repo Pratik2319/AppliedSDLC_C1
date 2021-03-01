@@ -8,9 +8,9 @@ from email.message import EmailMessage
 def send_email(d2):
     """To send the email"""
     ADDRESS = "fortestinginpython@gmail.com"
-    PASSWORD = ""    #encrypted
+    PASSWORD = "Sdlc#2021"    #should be encrypted
     d1 = d2
-    d1['faculty'] = "" #faculty_email
+    d1['faculty'] = "prithvi.pagala@ltts.com"
     
     for value in d1.items():
         msg = EmailMessage()
@@ -19,7 +19,7 @@ def send_email(d2):
         msg['To'] = value[1]         
         msg.set_content('Please find your Results')
 
-        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{d1[0]}"
+        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{str(d1[0])}"
 
         for i in os.walk(path):      
             plots = i[2]                                                     
