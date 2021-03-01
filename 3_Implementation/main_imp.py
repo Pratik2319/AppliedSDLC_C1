@@ -1,10 +1,10 @@
 """This is the main file for implementation"""
-from dat_plo import *
+from dat_plo import psno_email_list, calc_plot_all_fac, calc_plot_all_std
 from pr_email import send_email
 
 
 # To get the dictionary of ps-no as key and mail as value
-ps_em = {99003718:"prashantbagal191998@gmail.com"}
+ps_em = {99003718:"prashantbagal191998@gmail.com"} # psno_email_list()
 
 
 def main():
