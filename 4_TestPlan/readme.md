@@ -19,7 +19,7 @@
 
 |**ID**|<p>**DESCRIPTION**</p><p></p>|**EXPECTED INPUT**|**EXPECTED OUTPUT**|**ACTUAL OUTPUT**|
 | :- | :- | :- | :- | :- |
-|**LL\_1**|Top 5 students |[5.3,6,7,8,4,7.6,8.2]|Id of students whose averages are 5.3,6,7,8,4||
-|**LL\_2**|Bottom 5 students|[5.3,6,7,8,4,7.6,8.2]|Id of students whose averages are 8.2,7.6,4,8,7||
-|**LL\_3**|Class Maxima   |[5.3,6,7,8,4,7.6,8.2]|Id of students whose averages are 8.2,7.6,4,8,7||
+|**LL\_1**|Top 5 students |[5.3,6,7,8,4,7.6,8.2]|Id of students whose averages are 5.3,6,7,8,4||8
+|**LL\_2**|Bottom 5 students|[5.3,6,7,8,4,7.6,8.2]|Id of students whose averages are 8.2,7.6,4,8,7||8.2
+|**LL\_3**|Class Maxima   |[5.3,6,7,8,4,7.6,8.2]|Id of students whose averages are 8.2,7.6,4,8,7||8.2
 
