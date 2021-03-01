@@ -12,8 +12,8 @@
 
 |**Name**|**PS Number**|**Test Cases Provided**|**Test Cases Passed**|**Test Cases Failed**|
 | :-: | :-: | :-: | :-: | :-: |
-|<p></p><p>Mithun M R</p>|<p></p><p>99003716</p>|3|3|1|
-|<p></p><p>Prashant Sudhir Bagal</p>|<p></p><p>99003718</p>|3|3|1|
-|<p></p><p>Unnati Agrawal</p>|<p></p><p>99003650</p>|3|3|1|
-|<p></p><p>Aishwarya K H</p>|<p></p><p>99003619</p>|3|3|1|
+|<p></p><p>Mithun M R</p>|<p></p><p>99003716</p>|3|3|0|
+|<p></p><p>Prashant Sudhir Bagal</p>|<p></p><p>99003718</p>|3|3|0|
+|<p></p><p>Unnati Agrawal</p>|<p></p><p>99003650</p>|3|3|0|
+|<p></p><p>Aishwarya K H</p>|<p></p><p>99003619</p>|3|3|0|
 
