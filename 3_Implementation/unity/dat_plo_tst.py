@@ -4,7 +4,10 @@ import os
 from matplotlib import pyplot as plt
 import openpyxl
 
-data1=pd.read_excel("presurvey.xlsx")
+
+data1= pd.read_excel(r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
+
+
 
 #Reading all the excel files presurvey,postsurvey,pretest and posttest
 
@@ -90,3 +93,5 @@ def psno_email_list(data=data1):
         dic[data.iloc[i,0]]=data.iloc[i,1]
     
     return dic
+
+print(psno_email_list())
