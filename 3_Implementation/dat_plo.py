@@ -10,7 +10,7 @@ data1=pd.read_excel("data_test/presurvey.xlsx")
 data2=pd.read_excel("data_test/postsurvey.xlsx") 
 data3=pd.read_excel("data_test/pretest.xlsx")
 data4=pd.read_excel("data_test/posttest.xlsx")
-data = [data1, data2, data3, data4]
+data_all = [data1, data2, data3, data4]
 
 
 def list_of_los(data,ps):
@@ -20,7 +20,7 @@ def list_of_los(data,ps):
         if data.iloc[i,0]==ps:
             for j in range(2,8):
                mylist.append(data.iloc[i,j])
-            print(mylist)
+            return mylist
         else:
             continue 
 
@@ -131,7 +131,7 @@ def calc_plot_all_std(d1):
     """plots all the plot for all students one at a time"""
     rd_lst = ["pre_sur", "post_sur", "pre_tst", "post_tst"]
     for d in d1.items():
-        for i in data:                                                                              #PRE-TEST AND POST ASSESSMENT
+        for i in data_all:                                                                              #PRE-TEST AND POST ASSESSMENT
             auto_co_plotting(list_of_los(i, d[0]), d[0], rd_lst[j])
             j += 1
 
@@ -143,7 +143,7 @@ def calc_plot_all_std(d1):
 def calc_plot_all_fac():
     """plots all the plots required for the faculty"""
     s = "faculty"
-    for i in data:
+    for i in data_all:
         cross_co_plotting(average_of_los(i), max_of_LO(i),s, "avg_max")
         cross_co_plotting(max_of_LO(i), min_of_LO(i),s, "max_min")
         cross_co_plotting(top_5_average(i), bottom_5_average(i),s, "tp_btm5")
