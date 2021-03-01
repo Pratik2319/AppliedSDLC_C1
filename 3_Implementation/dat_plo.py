@@ -4,12 +4,18 @@ import os
 from matplotlib import pyplot as plt
 import openpyxl
 
-
+var1=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx'''""
+var2=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx'''""
+var3=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx'''""
+var4=""r'''F:\Document\GitHub\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx'''""
 #Reading all the excel files presurvey,postsurvey,pretest and posttest
-data1=pd.read_excel("data_test/presurvey.xlsx")
-data2=pd.read_excel("data_test/postsurvey.xlsx") 
-data3=pd.read_excel("data_test/pretest.xlsx")
-data4=pd.read_excel("data_test/posttest.xlsx")
+data1= pd.read_excel(var1)
+print(data1)
+data2= pd.read_excel(var2)
+data3= pd.read_excel(var3)
+data4= pd.read_excel(var4)
+
+
 data_all = [data1, data2, data3, data4]
 
 
