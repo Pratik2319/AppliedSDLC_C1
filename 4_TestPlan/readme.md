@@ -8,9 +8,9 @@
 | :- | :- | :- | :- | :- |
 |**HL\_1**|Average for one module|LO\_1 = 4,5,6,7|Avg\_LO1 = 5.5|**Above average**|
 |**HL\_2**|Average of individual student |<p>Averages of all module:</p><p>[5.5,4,7,9,1]</p>|<p></p><p>5.3</p>|**Above average**|
-|**HL\_3**|Average of class|Average of individual student: [5.3,6,7,8,4,7.6,8.2]|<p></p><p>6.585</p>|<p></p><p>**Above average**</p>|
-|**HL\_4**|Maxima|Maxima in individual module: [5.3,6,7,8,4,7.6,8.2]|<p></p><p>Bar graph for faculty</p>|<p></p><p>Bar graph for faculty</p>|
-
+|**HL\_3**|Average of class|[5.3,6,7,8,4,7.6,8.2]|<p></p><p>Averages of individual student</p>|<p></p><p>6.585</p>|
+|**HL\_4**|Student Maxima|[5.3,6,7,8,4,7.6,8.2]|<p></p><p>Maxima in individual module</p>|<p></p><p>Bar chart</p>|
+|**HL\_5**|Student Maxima|[5.3,6,7,8,4,7.6,8.2]|<p></p><p>Minima in individual module</p>|<p></p><p>Bar chart</p>|
 
 
 **LOW LEVEL REQUIREMENTS**
