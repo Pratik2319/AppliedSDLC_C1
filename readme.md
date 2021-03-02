@@ -1,4 +1,7 @@
-﻿# Team Summary 
+[![Git Inspector](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/gitinspector.yml/badge.svg)](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/gitinspector.yml)
+
+
+# Team Summary 
 
 |<p></p><p>**PS Number**</p>|<p></p><p>**Name**</p>|<p></p><p>**Contribution**</p>|<p>**Issues**</p><p>**Raised**</p>|<p>**Issues**</p><p>**Resolved**</p>|
 | :-: | :-: | :- | :-: | :-: |
