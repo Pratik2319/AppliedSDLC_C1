@@ -58,3 +58,11 @@ https://www.wordtemplatesonline.net/swot-analysis-template/
 https://www.lucidchart.com/pages/swot-analysis-template-word
 
 
+4\)Resources for Requirement Analysis
+
+ https://www.visual-paradigm.com/guide/requirements-gathering/requirement-analysis-techniques/ 
+
+https://www.guru99.com/learn-software-requirements-analysis-with-case-study.html
+
+
+
