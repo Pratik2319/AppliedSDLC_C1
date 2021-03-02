@@ -35,26 +35,7 @@ analysis code.
 
 # Git Inspector 
 
-2021/03/02.
-The following historical commit information, by author, was found:
-
-Author                     Commits    Insertions      Deletions    % of changes
-99003650                         6            40             39            0.84
-99003716                        12           107           4334           47.47
-99003718                        19           126             44            1.82
-99003719                        13            52             69            1.29
-prithvisekhar                    8          4530             15           48.58
-
-Below are the number of rows from each author that have survived and are still
-intact in the current revision:
-
-Author                     Rows      Stability          Age       % in comments
-99003650                     33           82.5          0.2                0.00
-99003716                     71           66.4          0.4                0.00
-99003718                     98           77.8          0.1                0.00
-99003719                     40           76.9          0.0                0.00
-prithvisekhar                79            1.7          0.0                0.00
-
+![](Aspose.Words.d5f4dbbe-26e6-43c5-861e-ffdd91e9bed4.001.png)
 
 # Learning resources
 
