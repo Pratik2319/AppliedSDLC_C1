@@ -35,7 +35,7 @@ analysis code.
 
 # Pytest
 
-![](pytest.001.png)
+![](pytest.png)
 
 # Git Inspector 
 
