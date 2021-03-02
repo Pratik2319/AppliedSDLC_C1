@@ -33,6 +33,10 @@ analysis code.
 
 5\) Making plateform independent workflow
 
+# Pytest
+
+![](Aspose.Words.a7ff31ae-6b49-4e9b-96b7-6f532da2d21b.001.png)
+
 # Git Inspector 
 
 ![](Aspose.Words.d5f4dbbe-26e6-43c5-861e-ffdd91e9bed4.001.png)
