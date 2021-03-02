@@ -68,7 +68,7 @@ https://www.guru99.com/learn-software-requirements-analysis-with-case-study.html
 
 Analysis of data of  students’ presurvey , postsurvey and pre test , post test
 
-**Epic :**
+## **Epic :**
 
 1.Importing data from excel sheets , calculating statistics using pandas.
 
@@ -76,7 +76,8 @@ Analysis of data of  students’ presurvey , postsurvey and pre test , post test
 
     1. Reading the files using pandas
 
-    Unnati (PS No. 99003650) created required excel files & with Prashant (PS No. 99003718) & Aishwarya (PS No. 99003719) she wrote all the functions required to       take inputs from excel files 
+    Unnati (PS No. 99003650) created required excel files & with Prashant (PS No. 99003718) & Aishwarya (PS No. 99003719) 
+    she wrote all the functions required to take inputs from excel files 
 
 2.Plotting bar chart of analysed data.
 
