@@ -78,9 +78,7 @@ def top_5_average(data):
 
 
 def sum_of_marks(data):
-
     """ Total marks in all los of students in a list"""
-
     mylist=[]
     for i in range(0,data.shape[0]):
             s=data.iloc[i,2:].sum()
@@ -103,10 +101,10 @@ x_lst_all = ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6"]
 
 def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     """saves the plot in a given directory"""
-    plt.bar(x_lst, y_lst, color="#ff0000", label=a)
+    plt.bar(x_lst, y_lst, color="#ff0000")
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
-    plt.legend()
+    #plt.legend()
     plt.title(a)
     try:
         path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
@@ -122,11 +120,11 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     """to co-relate the data"""
     x_ind = np.arange(len(x_lst))
     width = 0.3
-    plt.bar(x_lst, y_lst2, color="#ff0000", label="Pre-test", width=0.3)
-    plt.bar(x_ind + width, y_lst1, color="#00ff00", label="Post-test", width=0.3)
+    plt.bar(x_ind, y_lst2, color="#ff0000", width=width)
+    plt.bar(x_ind + width, y_lst1, color="#00ff00", width=width)
     plt.xlabel('Learning Objectives')
     plt.ylabel('Test/Survey points')
-    plt.legend()
+    #plt.legend()
     plt.title(a)
     try:
         path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
