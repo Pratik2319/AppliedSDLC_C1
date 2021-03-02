@@ -29,3 +29,13 @@ analysis code.
 4\) Creating workflow
 
 5\) Making plateform independent workflow
+
+# Learning resources
+
+1\)Resources for Testing, Unit testing, Integration testing 
+Type Of Testing:- https://hackr.io/blog/types-of-software-testing
+
+Unit Testing:- https://www.guru99.com/unit-testing-guide.html
+
+Integration Testing:- https://www.guru99.com/integration-testing.html
+
