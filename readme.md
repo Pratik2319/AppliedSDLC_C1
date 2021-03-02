@@ -17,3 +17,15 @@
 |<p></p><p>Unnati Agrawal</p>|<p></p><p>99003650</p>|3|3|0|
 |<p></p><p>Aishwarya K H</p>|<p></p><p>99003619</p>|3|3|0|
 
+# Challenges
+
+1\) Importing the coreect format of excel file in python.
+
+2\) Creation of logic in fuctions for data analysis.
+
+3\) Integration of automatic mailing code graph plotting code and
+analysis code.
+
+4\) Creating workflow
+
+5\) Making plateform independent workflow
