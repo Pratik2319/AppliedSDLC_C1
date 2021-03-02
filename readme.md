@@ -42,12 +42,19 @@ Integration Testing:- https://www.guru99.com/integration-testing.html
 
 2\)Resources for UML diagrams
 
-Resources for Structural UML diagram
+Resources for Structural and behavioural  UML diagram
 
 https://sparxsystems.com/enterprise_architect_user_guide/15.2/model_domains/structuraldiagrams.html
 
 https://www.tutorialspoint.com/uml/uml_standard_diagrams.htm
 
-https://www.visual-paradigm.com/guide/uml-unified-modeling-language/behavior-vs-structural-diagram/
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/behavior-vs-structural-diagram
+
+
+3\)Resources for SWOT Analysis
+
+https://www.wordtemplatesonline.net/swot-analysis-template/
+
+https://www.lucidchart.com/pages/swot-analysis-template-word
 
 
