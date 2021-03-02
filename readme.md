@@ -74,25 +74,27 @@ Analysis of data of  students’ presurvey , postsurvey and pre test , post test
 
 ` `**User Stories :**
 
-1. Reading the files using pandas
+    1. Reading the files using pandas
 
-Unnati (PS No. 99003650) created required excel files & with Prashant (PS No. 99003718) & Aishwarya (PS No. 99003719) she wrote all the functions required to take inputs from excel files 
+    Unnati (PS No. 99003650) created required excel files & with Prashant (PS No. 99003718) & Aishwarya (PS No. 99003719) she wrote all the functions required to       take inputs from excel files 
 
 2.Plotting bar chart of analysed data.
 
-`	`Prashant (PS No. 99003718) & Mithun (PS No. 99003716)
+  **User Stories :**
 
-`         `wrote functions to plot graphs
+    Prashant (PS No. 99003718) & Mithun (PS No. 99003716) wrote functions to plot graphs
 
-Aishwarya (PS No. 99003719) wrote functions to integrate them.
+    Aishwarya (PS No. 99003719) wrote functions to integrate them.
 
 3.Sending the plotted charts using automatic email scripting.
 
-`         `Mithun (PS No. 99003716) wrote code for automatic email        
+  **User Stories :**
 
-`         `Scripting.
+    Mithun (PS No. 99003716) wrote code for automatic email Scripting.
 
 4.Integrating all the functions
-**
-`         `Unnati (PS No. 99003650) & Mithun (PS No. 99003716) integrated all the functions
+  
+ **User Stories :**
+
+    Unnati (PS No. 99003650) & Mithun (PS No. 99003716) integrated all the functions
 
