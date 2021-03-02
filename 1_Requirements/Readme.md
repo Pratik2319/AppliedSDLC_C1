@@ -51,7 +51,7 @@ In the market the cost for this feature may from few thousands to lakhs dependin
 
 # Detail requirements
 
-## HIGH KEVEL REQUIREMENTS
+## HIGH LEVEL REQUIREMENTS
 | Requirement ID | Requirement Description |
 | --- | --- |
 | 1.Class average | To know the average of entire class in particular learning outcome. |
