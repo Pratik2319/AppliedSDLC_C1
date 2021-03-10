@@ -139,14 +139,14 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
 def calc_plot_all_std(d1):
     """plots all the plot for all students one at a time"""
     rd_lst = ["PRE_SURVEY", "POST_SURVEY", "PRE_TEST", "POST_TEST"]
-    for d in d1.items():
-        j = 0
+    for student in d1.items():
+        student_no = 0
         for i in data_all:                                                                          # PRE-TEST AND POST ASSESSMENT
-            auto_co_plotting(list_of_los(i, d[0]), d[0], rd_lst[j])
-            j += 1
+            auto_co_plotting(list_of_los(i, student[0]), student[0], rd_lst[student_no])
+            student_no += 1
 
-        cross_co_plotting(list_of_los(data1, d[0]), list_of_los(data2, d[0]), d[0], "pre_pst_sur")  # CROSS B/W PRE AND POST SURVEY
-        cross_co_plotting(list_of_los(data3, d[0]), list_of_los(data4, d[0]), d[0], "pre_pst_tst")  # CROSS B/W PRE AND POST ASSESSMENT
+        cross_co_plotting(list_of_los(data1, student[0]), list_of_los(data2, student[0]), student[0], "pre_pst_sur")  # CROSS B/W PRE AND POST SURVEY
+        cross_co_plotting(list_of_los(data3, student[0]), list_of_los(data4, student[0]), student[0], "pre_pst_tst")  # CROSS B/W PRE AND POST ASSESSMENT
 
 
 def calc_plot_all_fac():
