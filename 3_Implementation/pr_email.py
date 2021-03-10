@@ -7,8 +7,8 @@ from email.message import EmailMessage
 
 def send_email(d2):
     """To send the email"""
-    ADDRESS = "fortestinginpython@gmail.com"
-    PASSWORD = "Sdlc#2021"    #should be encrypted
+    ADDRESS = os.environ.get(USER_ADDRESS)                 #"fortestinginpython@gmail.com"
+    PASSWORD = os.environ.get(USER_PASSWORD)               # "Sdlc#2021"    should be encrypted
 
     d1 = d2
     #d1['faculty'] = "prithvi.pagala@ltts.com"
