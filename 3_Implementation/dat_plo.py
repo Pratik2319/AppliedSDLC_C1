@@ -4,10 +4,10 @@ import os
 from matplotlib import pyplot as plt
 import openpyxl
 
-data1 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
-data2 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx''')
-data3 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx''')
-data4 = pd.read_excel(r'''C:\Users\mithu\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx''')
+data1 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
+data2 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx''')
+data3 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx''')
+data4 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx''')
 
 
 data_all = [data1, data2, data3, data4]
@@ -107,7 +107,7 @@ def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     #plt.legend()
     plt.title(a)
     try:
-        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+        path = f"{os.getcwd()}" + f"/3_Implementation/{y}"
         if not os.path.exists(path):
             os.mkdir(path)
         path_new = path + f"/{a}"
@@ -127,7 +127,7 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     #plt.legend()
     plt.title(a)
     try:
-        path = f"C:/Users/mithu/AppliedSDLC_C1/3_Implementation/{y}"
+        path = f"{os.getcwd()}" + f"/3_Implementation/{y}"
         if not os.path.exists(path):
             os.mkdir(path)
         path_new = path + f"/{a}"
@@ -141,8 +141,8 @@ def calc_plot_all_std(d1):
     rd_lst = ["PRE_SURVEY", "POST_SURVEY", "PRE_TEST", "POST_TEST"]
     for student in d1.items():
         student_no = 0
-        for i in data_all:                                                                          # PRE-TEST AND POST ASSESSMENT
-            auto_co_plotting(list_of_los(i, student[0]), student[0], rd_lst[student_no])
+        for data in data_all:                                                                          # PRE-TEST AND POST ASSESSMENT
+            auto_co_plotting(list_of_los(data, student[0]), student[0], rd_lst[student_no])
             student_no += 1
 
         cross_co_plotting(list_of_los(data1, student[0]), list_of_los(data2, student[0]), student[0], "pre_pst_sur")  # CROSS B/W PRE AND POST SURVEY
@@ -152,7 +152,7 @@ def calc_plot_all_std(d1):
 def calc_plot_all_fac():
     """plots all the plots required for the faculty"""
     s = "faculty"
-    for i in data_all:
-        cross_co_plotting(average_of_los(i), max_of_LO(i),s, "avg_max")
-        cross_co_plotting(max_of_LO(i), min_of_LO(i),s, "max_min")
-        cross_co_plotting(top_5_average(i), bottom_5_average(i),s, "tp_btm5")
+    for data in data_all:
+        cross_co_plotting(average_of_los(data), max_of_LO(data),s, "avg_max")
+        cross_co_plotting(max_of_LO(data), min_of_LO(data),s, "max_min")
+        cross_co_plotting(top_5_average(data), bottom_5_average(data),s, "tp_btm5")
