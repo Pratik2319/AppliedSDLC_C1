@@ -1,6 +1,6 @@
 [![Git Inspector](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/gitinspector.yml/badge.svg)](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/gitinspector.yml)
 [![CodeQL](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/codeql-analysis.yml)
-[![Example workflow for Codecov](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/python-publish.yml/badge.svg)](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/python-publish.yml)
+[![code-coverage](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/python-publish.yml/badge.svg)](https://github.com/99003716/AppliedSDLC_C1/actions/workflows/python-publish.yml)
 
 # Team Summary 
 
