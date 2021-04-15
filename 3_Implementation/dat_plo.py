@@ -11,12 +11,6 @@ data2 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/postsurvey.xlsx")
 data3 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/pretest.xlsx")
 data4 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/posttest.xlsx")
 
-#data1 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
-#data2 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx''')
-#data3 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx''')
-#data4 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx''')
-
-
 data_all = [data1, data2, data3, data4]
 
 
