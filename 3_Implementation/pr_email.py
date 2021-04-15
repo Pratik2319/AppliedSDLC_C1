@@ -4,6 +4,7 @@ import smtplib
 import imghdr
 from email.message import EmailMessage
 
+current_path = os.getcwd()
 
 def send_email(d2):
     """To send the email"""
@@ -19,7 +20,7 @@ def send_email(d2):
         msg['To'] = value[1]
         msg.set_content('Please find your Results')
 
-        path = f"C:/Users/mithu/Desktop/AppliedSDLC_C1/3_Implementation/{value[0]}"
+        path = f"{current_path}/3_Implementation/{value[0]}"
         plots = []
         for i in os.walk(path):
             plots = i[2]

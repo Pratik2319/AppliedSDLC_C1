@@ -4,10 +4,17 @@ import os
 from matplotlib import pyplot as plt
 import openpyxl
 
-data1 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
-data2 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx''')
-data3 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx''')
-data4 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx''')
+Curpath = os.getcwd()
+
+data1 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/presurvey.xlsx")
+data2 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/postsurvey.xlsx")
+data3 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/pretest.xlsx")
+data4 = pd.read_excel(f"{Curpath}/3_Implementation/data_test/posttest.xlsx")
+
+#data1 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\presurvey.xlsx''')
+#data2 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\postsurvey.xlsx''')
+#data3 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\pretest.xlsx''')
+#data4 = pd.read_excel(r'''C:\Users\mithu\Desktop\AppliedSDLC_C1\3_Implementation\data_test\posttest.xlsx''')
 
 
 data_all = [data1, data2, data3, data4]
@@ -107,7 +114,7 @@ def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
     #plt.legend()
     plt.title(a)
     try:
-        path = f"{os.getcwd()}" + f"/3_Implementation/{y}"
+        path = f"{os.getcwd()}/3_Implementation/{y}"
         if not os.path.exists(path):
             os.mkdir(path)
         path_new = path + f"/{a}"
@@ -127,7 +134,7 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
     #plt.legend()
     plt.title(a)
     try:
-        path = f"{os.getcwd()}" + f"/3_Implementation/{y}"
+        path = f"{os.getcwd()}/3_Implementation/{y}"
         if not os.path.exists(path):
             os.mkdir(path)
         path_new = path + f"/{a}"
