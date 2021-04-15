@@ -113,6 +113,7 @@ def auto_co_plotting(y_lst, y, a, x_lst=x_lst_all):
             os.mkdir(path)
         path_new = path + f"/{a}"
         plt.savefig(path_new)
+        plt.close(fig=None)
     except Exception as e:
         print(e)
     
@@ -133,6 +134,7 @@ def cross_co_plotting(y_lst2, y_lst1, y, a, x_lst=x_lst_all):
             os.mkdir(path)
         path_new = path + f"/{a}"
         plt.savefig(path_new)
+        plt.close(fig=None)
     except Exception as e:
         print(e)
 

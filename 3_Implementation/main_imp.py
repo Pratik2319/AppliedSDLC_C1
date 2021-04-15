@@ -4,7 +4,7 @@ from pr_email import send_email
 
 
 # To get the dictionary of ps-no as key and mail as value
-ps_em = {99003718:"mithunmr200@gmail.com", 99003716:"mithunwatt3@gmail.com"} # psno_email_list()
+ps_em = {99003718:"prashantbagal191998@gmail.com", 99003716:"prashantbagal191998@gmail.com"} # psno_email_list()
 
 
 def main():
